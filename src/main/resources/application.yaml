@@ -23,3 +23,11 @@ spring:
   sql:
     init:
       platform: h2
+
+exchangerate:
+  remote:
+    service:
+      url: http://data.fixer.io/api
+      key:
+#      base: EUR
+#      symbols: USD,AUD,CAD,PLN,MXN
