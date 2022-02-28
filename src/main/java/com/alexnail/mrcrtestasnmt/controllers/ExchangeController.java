@@ -2,6 +2,7 @@ package com.alexnail.mrcrtestasnmt.controllers;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,7 +24,7 @@ public class ExchangeController {
     @GetMapping
     public ExchangeModel exchange(@RequestParam("from") String from,
                                   @RequestParam("to") String to,
-                                  @RequestParam("date") LocalDate date) {
+                                  @RequestParam("date") @DateTimeFormat(pattern="yyyy-MM-dd") LocalDate date) {
         return exchangeService.exchange(from, to, date);
     }
 }
