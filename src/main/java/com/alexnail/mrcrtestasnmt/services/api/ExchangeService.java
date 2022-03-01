@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.alexnail.mrcrtestasnmt.entities.Exchange;
 import com.alexnail.mrcrtestasnmt.entities.ExchangeId;
@@ -30,6 +31,7 @@ public class ExchangeService {
     @Autowired
     private ExchangeMapper exchangeMapper;
 
+    @Transactional
     public ExchangeModel exchange(String from, String to, LocalDate date) {
         Exchange exchangeFrom = exchangeRepository.getById(new ExchangeId(baseCurrency, from, date));
         exchangeRepository.incrementRequestsCounter(baseCurrency, from, date);

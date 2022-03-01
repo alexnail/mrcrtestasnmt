@@ -21,5 +21,6 @@ public interface ExchangeMapper {
     @Mapping(target = "currencyTo", source = "symbol")
     @Mapping(target = "exchangeRate", source = "rate")
     @Mapping(target = "date", source = "response.date")
+    @Mapping(target = "requestsCount", constant = "0L")
     Exchange toEntity(FixerResponseModel response, String symbol, BigDecimal rate);
 }
