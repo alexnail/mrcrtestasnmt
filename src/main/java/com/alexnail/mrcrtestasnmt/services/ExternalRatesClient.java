@@ -4,6 +4,6 @@ import com.alexnail.mrcrtestasnmt.models.FixerResponseModel;
 
 public interface ExternalRatesClient {
 
-    FixerResponseModel latest();
+    FixerResponseModel getLatestRates();
 
 }

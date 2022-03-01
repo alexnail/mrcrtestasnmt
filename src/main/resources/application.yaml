@@ -29,5 +29,4 @@ exchangerate:
     service:
       url: http://data.fixer.io/api
       key:
-#      base: EUR
-#      symbols: USD,AUD,CAD,PLN,MXN
+      base-currency: EUR

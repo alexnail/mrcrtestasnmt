@@ -1,5 +1,7 @@
 package com.alexnail.mrcrtestasnmt.mappers;
 
+import java.math.BigDecimal;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
@@ -16,8 +18,8 @@ public interface ExchangeMapper {
     ExchangeModel toModel(Exchange exchange);
 
     @Mapping(target = "currencyFrom", source = "response.base")
-    @Mapping(target = "currencyTo", source = "er.symbol")
-    @Mapping(target = "exchangeRate", source = "er.rate")
+    @Mapping(target = "currencyTo", source = "symbol")
+    @Mapping(target = "exchangeRate", source = "rate")
     @Mapping(target = "date", source = "response.date")
-    Exchange toEntity(FixerResponseModel response, FixerResponseModel.ExchangeRate er);
+    Exchange toEntity(FixerResponseModel response, String symbol, BigDecimal rate);
 }

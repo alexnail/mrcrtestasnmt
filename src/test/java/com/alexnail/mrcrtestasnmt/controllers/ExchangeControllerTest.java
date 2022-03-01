@@ -20,6 +20,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.alexnail.mrcrtestasnmt.models.ExchangeModel;
+import com.alexnail.mrcrtestasnmt.services.ExternalRatesScheduler;
 import com.alexnail.mrcrtestasnmt.services.api.ExchangeService;
 
 @WebMvcTest
@@ -30,6 +31,10 @@ class ExchangeControllerTest {
 
     @MockBean
     private ExchangeService exchangeService;
+
+    @MockBean
+    private ExternalRatesScheduler externalRatesScheduler;
+
 
     @Test
     void testExchange() throws Exception {
