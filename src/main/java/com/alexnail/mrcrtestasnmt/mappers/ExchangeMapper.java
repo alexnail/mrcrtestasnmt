@@ -9,7 +9,7 @@ import com.alexnail.mrcrtestasnmt.entities.Exchange;
 import com.alexnail.mrcrtestasnmt.models.ExchangeModel;
 import com.alexnail.mrcrtestasnmt.models.FixerResponseModel;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface ExchangeMapper {
 
     @Mapping(target = "from", source = "currencyFrom")
